@@ -1,15 +1,8 @@
 const express = require("express");
 const courseroutes = express.Router();
+const courseController = require("../controllers/courseController")
 
-courseroutes.post("/purchase",(req,res)=>{
-    res.json({
-        message : "course purchase endpoint"
-    })
-})
+courseroutes.post("/purchase",courseController.postPurchase);
 
-courseroutes.get("/preview",(req,res)=>{
-    res.json({
-        message : "courses endpoint"
-    })
-})
+courseroutes.get("/preview",courseController.getPurchases);
 module.exports = courseroutes;
